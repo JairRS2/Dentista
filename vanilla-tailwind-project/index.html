@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Vanilla con Tailwind CSS</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navegación -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">Mi Proyecto</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary transition duration-300">Inicio</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition duration-300">Sobre</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition duration-300">Servicios</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition duration-300">Contacto</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-gray-700 hover:text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menú móvil -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Inicio</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Sobre</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Servicios</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-blue-600 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    Bienvenido a Tu Proyecto
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Desarrollando con HTML, JavaScript y Tailwind CSS
+                </p>
+                <button id="cta-button" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Comenzar Ahora
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Características -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Características</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Característica 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Rápido</h4>
+                        <p class="text-gray-600">Desarrollo ágil con Tailwind CSS y JavaScript vanilla.</p>
+                    </div>
+
+                    <!-- Característica 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Responsivo</h4>
+                        <p class="text-gray-600">Diseño adaptable para todos los dispositivos.</p>
+                    </div>
+
+                    <!-- Característica 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Moderno</h4>
+                        <p class="text-gray-600">Tecnologías actuales y mejores prácticas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contador -->
+        <section class="bg-gray-100 py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="text-3xl font-bold text-gray-800 mb-8">Contador Interactivo</h3>
+                <div class="bg-white p-8 rounded-lg shadow-lg inline-block">
+                    <div class="text-6xl font-bold text-primary mb-6" id="counter">0</div>
+                    <div class="space-x-4">
+                        <button id="increment" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300">
+                            Incrementar
+                        </button>
+                        <button id="decrement" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition duration-300">
+                            Decrementar
+                        </button>
+                        <button id="reset" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition duration-300">
+                            Reiniciar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Mi Proyecto. Desarrollado con HTML, JavaScript y Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
